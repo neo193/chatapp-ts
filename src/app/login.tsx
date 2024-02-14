@@ -17,7 +17,7 @@ const Login = () => {
           </div>
         </CardContent>
         <CardFooter>
-          <Link href="/signup">Don't have a account? Sign Up</Link>
+          <Link href="/signup">Don't have a account? <span className='font-bold'>Sign Up</span></Link>
         </CardFooter>
       </Card>
     </div>
