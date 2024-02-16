@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import axios from 'axios';
 import Home from '../app/home/page'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -34,11 +35,16 @@ const handleGoogleLoginClick = async (event: any) => {
     console.error("Error during Google sign-in:", error);
   }
 };
-const handleLogin = ()=>{
-  console.log(userData)
-//check validation...
-router.push('/home')
-}
+const handleLogin = async (event: any)=>{
+  event.preventDefault();
+  const response = await axios.post('/api/login', userData)
+    console.log('Pre: Status Received: ', response.data.status)
+    if ( response.data.status === 200 ){
+      router.push('/home');
+    } else {
+      console.log("Status code: ",response.data.status);
+    }
+  }
 
   return (
     <div className="flex justify-center items-center h-screen">
