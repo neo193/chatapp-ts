@@ -411,7 +411,7 @@ function home() {
               src="https://play-lh.googleusercontent.com/t1oBmuRw5E--FK1qjIGj5cb8AcM-JJlDLF5HBdSWmsMQgx5GNobCqKCUp5WoJJpe3w=w240-h480"
               alt="send-icon"
             />
-          </Avatar>{" "}
+          </Avatar>
         </div>
       </div>
     </div>
